@@ -556,12 +556,29 @@ function sendForm(){
   var name = document.getElementById('f-name').value.trim();
   var phone = document.getElementById('f-phone').value.trim();
   if (!name || !phone){ alert('אנא מלאו שם וטלפון'); return; }
-  document.getElementById('f-name').value='';
-  document.getElementById('f-phone').value='';
+  
+  // 1. Текст, который придет владельцу в чат
+  var message = "היי, קבלת פנייה חדשה מהאתר! ✨\n" + 
+                "שם: " + name + "\n" + 
+                "טלפון: " + phone;
+  
+  // 2. Номер телефона владельца прачечной. 
+  // Начни с кода 972 и добавь номер без первого нуля (например, 972548373747)
+  var whatsappNumber = "972548373747"; 
+  
+  // 3. Открываем чат WhatsApp в новой вкладке
+  var url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+  window.open(url, '_blank');
+  
+  // Очищаем форму на сайте
+  document.getElementById('f-name').value = '';
+  document.getElementById('f-phone').value = '';
+  
   var ok = document.getElementById('fsuccess');
   ok.style.display = 'block';
   setTimeout(function(){ ok.style.display='none'; }, 5000);
 }
+
 </script>
 </body>
 </html>
