@@ -206,18 +206,6 @@ section { padding: 90px 5%; }
 /* FOOTER */
 footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
 .footer-inner { max-width: 1160px; margin: 0 auto; }
-.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
-.ft-brand .logo { font-family: 'Heebo',sans-serif; font-size: 1.6rem; font-weight: 900; color: #fff; display: block; margin-bottom: 0.8rem; }
-.ft-brand .logo span { color: var(--gold); }
-.ft-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.85; }
-.socials { display: flex; gap: 0.6rem; margin-top: 1rem; flex-direction: row-reverse; }
-.soc { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; color: rgba(255,255,255,0.65); transition: background 0.2s,color 0.2s,border-color 0.2s; }
-.soc:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
-.ft-col h4 { font-family: 'Heebo',sans-serif; font-weight: 800; color: #fff; font-size: 0.92rem; margin-bottom: 1rem; }
-.ft-col ul { list-style: none; }
-.ft-col li { margin-bottom: 0.6rem; }
-.ft-col a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
-.ft-col a:hover { color: var(--gold); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
 .footer-bottom strong { color: var(--gold); }
 
@@ -225,7 +213,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
 @media (max-width:1024px) {
   .services-grid { grid-template-columns: repeat(2,1fr); }
   .reviews-grid { grid-template-columns: repeat(2,1fr); }
-  .footer-top { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width:768px) {
   .nav-links, .nav-call { display: none; }
@@ -237,7 +224,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   .services-grid { grid-template-columns: 1fr; }
   .reviews-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
   .footer-bottom { flex-direction: column; text-align: center; }
   nav { top: 40px; }
 }
@@ -249,10 +235,8 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
 </head>
 <body>
 
-<!-- TOP BAR -->
 <div class="top-bar">🚚 <strong>משלוח חינם</strong> לכל רחבי העיר! | <strong>משלוח עד הבית</strong></div>
 
-<!-- NAV -->
 <nav>
   <div class="nav-logo">Top<span>Clean</span></div>
   <ul class="nav-links">
@@ -266,7 +250,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" onclick="closeMenu()">✕</button>
   <a href="#about" onclick="closeMenu()">עלינו</a>
@@ -276,7 +259,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   <a href="#contact" onclick="closeMenu()">צור קשר</a>
 </div>
 
-<!-- ═══ HERO ═══ -->
 <section id="hero">
   <div class="bubbles" id="bubblesWrap"></div>
   <div class="hero-inner">
@@ -294,7 +276,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   </div>
 </section>
 
-<!-- ═══ ABOUT ═══ -->
 <section id="about">
   <div class="about-grid">
     <div>
@@ -308,14 +289,14 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
           <div class="perk-icon">💧</div>
           <div>
             <div class="perk-name">כביסה עדינה</div>
-            <div class="perk-desc">תוכניות עדינות לכל סוגи הבדים — מאריג ועד ג'ינס</div>
+            <div class="perk-desc">תוכניות עדינות לכל סוגי הבדים — מאריג ועד ג'ינס</div>
           </div>
         </div>
         <div class="perk">
           <div class="perk-icon">🚀</div>
           <div>
             <div class="perk-name">מהיר ובזמן</div>
-            <div class="perk-desc">טיפול דחוף תוך 24 שעות — ללא פשרות על האיכות</div>
+            <div class="perk-desc">טיפול דחוף תוך 24 שעות — ללא פשרות на האיכות</div>
           </div>
         </div>
         <div class="perk">
@@ -329,7 +310,7 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
           <div class="perk-icon">✨</div>
           <div>
             <div class="perk-name">אחריות לאיכות</div>
-            <div class="perk-desc">לא מרוצים? נכבס מחדש בחינם — זה ההבטחה שלנו</div>
+            <div class="perk-desc">לא מרוצים? נכבס מחדש בחינם — זו ההבטחה שלנו</div>
           </div>
         </div>
       </div>
@@ -349,18 +330,17 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   </div>
 </section>
 
-<!-- ═══ SERVICES ═══ -->
 <section id="services">
   <div class="sec-head center">
     <div class="sec-label">שירותים</div>
     <h2 class="sec-title">מה אנחנו מציעים</h2>
-    <p class="sec-sub">מגוון שלם של שירותי טיפול בבגדים ובטקסטיל</p>
+    <p class="sec-sub">מגוון שלם של שירותи טיפול בבגדים ובטקסטיל</p>
   </div>
   <div class="services-grid">
     <div class="svc-card">
       <span class="svc-icon">👕</span>
       <div class="svc-name">כביסה</div>
-      <div class="svc-desc">כביסה מקצועית לכל סוגי הבגדים. כביסה במכונה и בעבודת יד, עם בחירת תוכנית המתאימה לסוג הבד.</div>
+      <div class="svc-desc">כביסה מקצועית לכל סוגי הבגדים. כביסה במכונה ובעבודת יד, עם בחירת תוכנית המתאימה לסוג הבד.</div>
       <span class="svc-price">מ-₪15</span>
     </div>
     <div class="svc-card">
@@ -390,23 +370,22 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
     <div class="svc-card">
       <span class="svc-icon">🛏️</span>
       <div class="svc-name">מצעים ומיטה</div>
-      <div class="svc-desc">כביסה и גיהוץ של מצעים, כריות ושמיכות. היגייני, נקי ורענן.</div>
+      <div class="svc-desc">כביסה וגיהוץ של מצעים, כריות ושמיכות. היгייני, נקי ורענן.</div>
       <span class="svc-price">מ-₪25</span>
     </div>
   </div>
 </section>
 
-<!-- ═══ REVIEWS ═══ -->
 <section id="reviews">
   <div class="sec-head center">
     <div class="sec-label">ביקורות</div>
     <h2 class="sec-title">מה אומרים הלקוחות שלנו</h2>
-    <p class="sec-sub">אנחנו גאים באมון של הלקוחות הקבועים שלנו</p>
+    <p class="sec-sub">אנחנו גאים באמון של הלקוחות הקבועים שלנו</p>
   </div>
   <div class="reviews-grid">
     <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«מכבסה מצוינת! הגיעו לאסוף והחזירו בזמן, האיכות פשוט מדהиמה. הסוודר היקר שלי חזר כמו חדש. ממליץ בחום לכולם!»</div>
+      <div class="rev-text">«מכבסה מצוינת! הגיעו לאסוף והחזירו בזמן, האיכות פשוט מדהימה. הסוודר היקר שלי חזר כמו חדш. ממליץ בחום לכולם!»</div>
       <div class="rev-author">
         <div class="rev-ava" style="background:#F5C842;">יכ</div>
         <div>
@@ -417,7 +396,7 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
     </div>
     <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«השירות מדהים, המחירים הוגנים והצוות מקצועי ואדיב. הבгדים חוזרים נקיים, מגוהצים ומסודרים. מכבסה מומלצת בחום!»</div>
+      <div class="rev-text">«השירות מדהים, המחירים הוגנים והצוות מקצועי ואדיב. הבגדים חוזרים נקיים, מגוהצים ומסודרים. מכבסה מומלצת בחום!»</div>
       <div class="rev-author">
         <div class="rev-ava" style="background:#4BB4E8;">רל</div>
         <div>
@@ -440,7 +419,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   </div>
 </section>
 
-<!-- ═══ FAQ ═══ -->
 <section id="faq">
   <div class="sec-head center">
     <div class="sec-label">שאלות נפוצות</div>
@@ -464,7 +442,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   </div>
 </section>
 
-<!-- ═══ CONTACT ═══ -->
 <section id="contact">
   <div class="contact-grid">
     <div>
@@ -511,7 +488,6 @@ footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
     <div class="footer-bottom">
@@ -555,20 +531,27 @@ function closeMenu(){ document.getElementById('mobileMenu').classList.remove('op
 function sendForm(){
   var name = document.getElementById('f-name').value.trim();
   var phone = document.getElementById('f-phone').value.trim();
-  if (!name || !phone){ alert('אנא מלאו שם וטלפון'); return; }
   
-  // ВСТАВЬ СВОИ ДАННЫЕ МЕЖДУ КАВЫЧКАМИ:
+  if (!name || !phone){ 
+    alert('אנא מלאו שם וטלפון'); 
+    return; 
+  }
+  
+  // Анимация кнопки при отправке
+  var button = document.querySelector('.fsubmit');
+  var originalText = button.innerHTML;
+  button.disabled = true;
+  button.innerHTML = "שולח... ⏳";
+
   var telegramToken = "8855127559:AAGbfkQYn8EjPqFGyC5vjncWbdRl4T2Tlvk";
   var telegramChatId = "855516010";
   
-  // Формируем текст сообщения
   var textMessage = "🧺 פנייה חדשה מהאתר!\n" + 
                     "👤 שם: " + name + "\n" + 
                     "📞 טלפון: " + phone;
                     
   var url = "https://api.telegram.org/bot" + telegramToken + "/sendMessage";
   
-  // Отправляем запрос в Telegram
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -578,8 +561,11 @@ function sendForm(){
     })
   })
   .then(function(response) {
+    // Возвращаем кнопку в исходное состояние
+    button.disabled = false;
+    button.innerHTML = originalText;
+
     if (response.ok) {
-      // Если всё улетело, очищаем форму и показываем зеленую плашку на сайте
       document.getElementById('f-name').value = '';
       document.getElementById('f-phone').value = '';
       
@@ -591,7 +577,9 @@ function sendForm(){
     }
   })
   .catch(function(error) {
-    alert('שгиאה בשליחה, נסה שנית');
+    button.disabled = false;
+    button.innerHTML = originalText;
+    alert('שגיאה בשליחה, נסה שנית');
   });
 }
 </script>
