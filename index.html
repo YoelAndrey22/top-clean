@@ -1,4 +1,3 @@
-# top-clean
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
@@ -27,35 +26,58 @@ html { scroll-behavior: smooth; }
 body { font-family: 'Heebo', sans-serif; color: var(--text); background: #fff; overflow-x: hidden; direction: rtl; }
 h1,h2,h3,h4 { font-family: 'Heebo', sans-serif; }
 
-/* NAV */
+/* DELIVERY BAR (FIXED AT TOP) */
+.top-bar { 
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1002;
+  height: 40px;
+  background: linear-gradient(90deg,var(--sky-deep),var(--sky)); 
+  color: #fff; 
+  text-align: center; 
+  padding: 0.55rem 1rem; 
+  font-family: 'Heebo',sans-serif; 
+  font-weight: 700; 
+  font-size: 0.9rem; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.top-bar strong { color: var(--gold); }
+
+/* NAV (SITS RIGHT BELOW TOP-BAR) */
 nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  position: fixed; 
+  top: 40px; 
+  left: 0; 
+  right: 0; 
+  z-index: 1001;
   background: rgba(13,43,69,0.95);
   backdrop-filter: blur(12px);
   padding: 0 5%;
-  display: flex; align-items: center; justify-content: space-between;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
   height: 64px;
   box-shadow: 0 2px 20px rgba(0,0,0,0.25);
 }
-.nav-logo { font-family:'Heebo',sans-serif; font-size:1.5rem; font-weight:900; color:#fff; }
+.nav-logo { font-family: 'Heebo',sans-serif; font-size: 1.5rem; font-weight: 900; color: #fff; }
 .nav-logo span { color: var(--gold); }
-.nav-links { display:flex; gap:2rem; list-style:none; flex-direction:row-reverse; }
-.nav-links a { color:rgba(255,255,255,0.8); text-decoration:none; font-size:0.9rem; font-weight:500; transition:color 0.2s; }
+.nav-links { display: flex; gap: 2rem; list-style: none; flex-direction: row-reverse; }
+.nav-links a { color: rgba(255,255,255,0.8); text-decoration: none; font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
 .nav-links a:hover { color: var(--gold); }
-.nav-call { background:var(--gold); color:var(--navy); border:none; border-radius:50px; padding:0.5rem 1.4rem; font-family:'Heebo',sans-serif; font-weight:800; font-size:0.9rem; cursor:pointer; text-decoration:none; white-space:nowrap; }
-.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; background:none; border:none; padding:4px; }
-.hamburger span { display:block; width:24px; height:2px; background:white; border-radius:2px; }
+.nav-call { background: var(--gold); color: var(--navy); border: none; border-radius: 50px; padding: 0.5rem 1.4rem; font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 0.9rem; cursor: pointer; text-decoration: none; white-space: nowrap; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: white; border-radius: 2px; }
 
 /* MOBILE MENU */
-.mobile-menu { display:none; position:fixed; inset:0; z-index:999; background:rgba(13,43,69,0.98); flex-direction:column; align-items:center; justify-content:center; gap:2rem; }
-.mobile-menu.open { display:flex; }
-.mobile-menu a { color:#fff; text-decoration:none; font-family:'Heebo',sans-serif; font-size:1.8rem; font-weight:800; }
-.mobile-menu a:hover { color:var(--gold); }
-.mobile-close { position:absolute; top:1.5rem; left:1.5rem; background:none; border:none; color:#fff; font-size:2rem; cursor:pointer; }
-
-/* DELIVERY BAR */
-.top-bar { background:linear-gradient(90deg,var(--sky-deep),var(--sky)); color:#fff; text-align:center; padding:0.55rem 1rem; font-family:'Heebo',sans-serif; font-weight:700; font-size:0.9rem; }
-.top-bar strong { color:var(--gold); }
+.mobile-menu { display: none; position: fixed; inset: 0; z-index: 1005; background: rgba(13,43,69,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+.mobile-menu.open { display: flex; }
+.mobile-menu a { color: #fff; text-decoration: none; font-family: 'Heebo',sans-serif; font-size: 1.8rem; font-weight: 800; }
+.mobile-menu a:hover { color: var(--gold); }
+.mobile-close { position: absolute; top: 1.5rem; left: 1.5rem; background: none; border: none; color: #fff; font-size: 2rem; cursor: pointer; }
 
 /* HERO */
 #hero {
@@ -63,171 +85,172 @@ nav {
   background: linear-gradient(145deg, #0D2B45 0%, #0D6FAB 55%, #1A8FD1 100%);
   display: flex; align-items: center; justify-content: center;
   position: relative; overflow: hidden;
-  padding: 120px 5% 80px;
+  padding: 150px 5% 80px; /* Increased top padding to clear fixed headers */
   text-align: center;
 }
-.bubbles { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+.bubbles { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 1; }
 .bubble {
-  position:absolute; border-radius:50%;
-  background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.04));
-  border:1.5px solid rgba(255,255,255,0.2);
+  position: absolute; border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.35), rgba(255,255,255,0.04));
+  border: 1.5px solid rgba(255,255,255,0.2);
   animation: rise linear infinite;
 }
 @keyframes rise {
-  0%   { transform:translateY(100vh) scale(1); opacity:0; }
-  5%   { opacity:0.8; }
-  95%  { opacity:0.4; }
-  100% { transform:translateY(-20vh) scale(0.7); opacity:0; }
+  0%   { transform: translateY(0) scale(1); opacity: 0; }
+  5%   { opacity: 0.8; }
+  95%  { opacity: 0.4; }
+  100% { transform: translateY(-120vh) scale(0.7); opacity: 0; }
 }
-.hero-inner { position:relative; z-index:2; max-width:700px; }
-.hero-badge { display:inline-block; background:rgba(245,200,66,0.18); border:1px solid rgba(245,200,66,0.45); color:var(--gold); border-radius:50px; padding:0.35rem 1.1rem; font-size:0.82rem; font-weight:700; letter-spacing:1px; margin-bottom:1.5rem; }
-.hero-title { font-size:clamp(2.6rem,7vw,4.8rem); font-weight:900; color:#fff; line-height:1.15; margin-bottom:1.1rem; }
-.hero-title em { color:var(--gold); font-style:normal; }
-.hero-sub { font-size:clamp(0.95rem,2.2vw,1.15rem); color:rgba(255,255,255,0.72); line-height:1.85; margin-bottom:2.5rem; font-weight:300; }
-.hero-btns { display:flex; gap:1rem; justify-content:center; flex-wrap:wrap; margin-bottom:2.5rem; }
-.btn-gold { background:var(--gold); color:var(--navy); padding:0.9rem 2.2rem; border-radius:50px; font-family:'Heebo',sans-serif; font-weight:800; font-size:1rem; text-decoration:none; transition:transform 0.2s,box-shadow 0.2s; box-shadow:0 4px 18px rgba(245,200,66,0.35); }
-.btn-gold:hover { transform:translateY(-3px); box-shadow:0 8px 28px rgba(245,200,66,0.5); }
-.btn-ghost { border:2px solid rgba(255,255,255,0.45); color:#fff; padding:0.9rem 2.2rem; border-radius:50px; font-family:'Heebo',sans-serif; font-weight:700; font-size:1rem; text-decoration:none; transition:all 0.2s; }
-.btn-ghost:hover { background:rgba(255,255,255,0.1); border-color:#fff; }
-.hero-phones { display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; }
-.hero-phones a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:1rem; font-weight:600; display:flex; align-items:center; gap:0.4rem; transition:color 0.2s; direction:ltr; }
-.hero-phones a:hover { color:var(--gold); }
+.hero-inner { position: relative; z-index: 2; max-width: 700px; }
+.hero-badge { display: inline-block; background: rgba(245,200,66,0.18); border: 1px solid rgba(245,200,66,0.45); color: var(--gold); border-radius: 50px; padding: 0.35rem 1.1rem; font-size: 0.82rem; font-weight: 700; letter-spacing: 1px; margin-bottom: 1.5rem; }
+.hero-title { font-size: clamp(2.6rem,7vw,4.8rem); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 1.1rem; }
+.hero-title em { color: var(--gold); font-style: normal; }
+.hero-sub { font-size: clamp(0.95rem,2.2vw,1.15rem); color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: 2.5rem; font-weight: 300; }
+.hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2.5rem; }
+.btn-gold { background: var(--gold); color: var(--navy); padding: 0.9rem 2.2rem; border-radius: 50px; font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 1rem; text-decoration: none; transition: transform 0.2s,box-shadow 0.2s; box-shadow: 0 4px 18px rgba(245,200,66,0.35); }
+.btn-gold:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(245,200,66,0.5); }
+.btn-ghost { border: 2px solid rgba(255,255,255,0.45); color: #fff; padding: 0.9rem 2.2rem; border-radius: 50px; font-family: 'Heebo',sans-serif; font-weight: 700; font-size: 1rem; text-decoration: none; transition: all 0.2s; }
+.btn-ghost:hover { background: rgba(255,255,255,0.1); border-color: #fff; }
+.hero-phones { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+.hero-phones a { color: rgba(255,255,255,0.85); text-decoration: none; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; direction: ltr; }
+.hero-phones a:hover { color: var(--gold); }
 
 /* SECTION COMMONS */
-section { padding:90px 5%; }
-.sec-label { font-size:0.78rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--sky); margin-bottom:0.6rem; }
-.sec-title { font-size:clamp(1.7rem,4vw,2.6rem); font-weight:900; color:var(--navy); line-height:1.2; margin-bottom:0.8rem; }
-.sec-sub { font-size:0.96rem; color:var(--muted); line-height:1.85; }
-.sec-head { margin-bottom:3.5rem; }
-.sec-head.center { text-align:center; }
-.sec-head.center .sec-sub { max-width:520px; margin:0 auto; }
+section { padding: 90px 5%; }
+.sec-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--sky); margin-bottom: 0.6rem; }
+.sec-title { font-size: clamp(1.7rem,4vw,2.6rem); font-weight: 900; color: var(--navy); line-height: 1.2; margin-bottom: 0.8rem; }
+.sec-sub { font-size: 0.96rem; color: var(--muted); line-height: 1.85; }
+.sec-head { margin-bottom: 3.5rem; }
+.sec-head.center { text-align: center; }
+.sec-head.center .sec-sub { max-width: 520px; margin: 0 auto; }
 
 /* ABOUT */
-#about { background:#fff; }
-.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; max-width:1160px; margin:0 auto; }
-.about-visual { position:relative; }
-.about-img-box { border-radius:var(--radius); overflow:hidden; aspect-ratio:4/3; background:linear-gradient(135deg,var(--sky-deep),var(--sky)); display:flex; align-items:center; justify-content:center; }
-.about-placeholder { text-align:center; color:#fff; }
-.about-placeholder .big { font-size:5rem; }
-.about-placeholder p { font-family:'Heebo',sans-serif; font-size:1.6rem; font-weight:900; margin-top:0.5rem; }
-.badge-years { position:absolute; bottom:-1rem; left:-1rem; background:var(--gold); border-radius:16px; padding:1rem 1.4rem; text-align:center; box-shadow:var(--shadow); }
-.badge-years .num { font-family:'Heebo',sans-serif; font-size:2.2rem; font-weight:900; color:var(--navy); line-height:1; }
-.badge-years .lbl { font-size:0.72rem; font-weight:800; color:var(--navy); letter-spacing:0.5px; }
-.perks { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; margin-top:2rem; }
-.perk { display:flex; gap:1rem; align-items:flex-start; padding:1.2rem; border-radius:14px; background:var(--foam); }
-.perk-icon { width:44px; height:44px; border-radius:12px; background:linear-gradient(135deg,var(--sky),var(--sky-deep)); display:flex; align-items:center; justify-content:center; font-size:1.3rem; flex-shrink:0; }
-.perk-name { font-family:'Heebo',sans-serif; font-weight:800; font-size:0.93rem; color:var(--navy); margin-bottom:0.2rem; }
-.perk-desc { font-size:0.8rem; color:var(--muted); line-height:1.6; }
+#about { background: #fff; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1160px; margin: 0 auto; }
+.about-visual { position: relative; }
+.about-img-box { border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3; background: linear-gradient(135deg,var(--sky-deep),var(--sky)); display: flex; align-items: center; justify-content: center; }
+.about-placeholder { text-align: center; color: #fff; }
+.about-placeholder .big { font-size: 5rem; }
+.about-placeholder p { font-family: 'Heebo',sans-serif; font-size: 1.6rem; font-weight: 900; margin-top: 0.5rem; }
+.badge-years { position: absolute; bottom: -1rem; left: -1rem; background: var(--gold); border-radius: 16px; padding: 1rem 1.4rem; text-align: center; box-shadow: var(--shadow); }
+.badge-years .num { font-family: 'Heebo',sans-serif; font-size: 2.2rem; font-weight: 900; color: var(--navy); line-height: 1; }
+.badge-years .lbl { font-size: 0.72rem; font-weight: 800; color: var(--navy); letter-spacing: 0.5px; }
+.perks { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; margin-top: 2rem; }
+.perk { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; border-radius: 14px; background: var(--foam); }
+.perk-icon { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg,var(--sky),var(--sky-deep)); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+.perk-name { font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 0.93rem; color: var(--navy); margin-bottom: 0.2rem; }
+.perk-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.6; }
 
 /* SERVICES */
-#services { background:var(--foam); }
-.services-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.6rem; max-width:1160px; margin:0 auto; }
-.svc-card { background:#fff; border-radius:var(--radius); padding:2rem 1.8rem; box-shadow:0 4px 20px rgba(13,43,69,0.06); transition:transform 0.25s,box-shadow 0.25s; position:relative; overflow:hidden; }
-.svc-card::after { content:''; position:absolute; top:0; right:0; left:0; height:3px; background:linear-gradient(90deg,var(--sky-light),var(--sky)); transform:scaleX(0); transform-origin:right; transition:transform 0.3s; }
-.svc-card:hover { transform:translateY(-6px); box-shadow:0 16px 40px rgba(13,43,69,0.13); }
-.svc-card:hover::after { transform:scaleX(1); }
-.svc-icon { font-size:2.4rem; margin-bottom:1rem; display:block; }
-.svc-name { font-family:'Heebo',sans-serif; font-size:1.15rem; font-weight:800; color:var(--navy); margin-bottom:0.5rem; }
-.svc-desc { font-size:0.87rem; color:var(--muted); line-height:1.75; margin-bottom:1.2rem; }
-.svc-price { display:inline-block; background:linear-gradient(135deg,var(--sky),var(--sky-deep)); color:#fff; border-radius:50px; padding:0.3rem 1rem; font-family:'Heebo',sans-serif; font-weight:800; font-size:0.88rem; }
+#services { background: var(--foam); }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.6rem; max-width: 1160px; margin: 0 auto; }
+.svc-card { background: #fff; border-radius: var(--radius); padding: 2rem 1.8rem; box-shadow: 0 4px 20px rgba(13,43,69,0.06); transition: transform 0.25s,box-shadow 0.25s; position: relative; overflow: hidden; }
+.svc-card::after { content: ''; position: absolute; top: 0; right: 0; left: 0; height: 3px; background: linear-gradient(90deg,var(--sky-light),var(--sky)); transform: scaleX(0); transform-origin: right; transition: transform 0.3s; }
+.svc-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(13,43,69,0.13); }
+.svc-card:hover::after { transform: scaleX(1); }
+.svc-icon { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+.svc-name { font-family: 'Heebo',sans-serif; font-size: 1.15rem; font-weight: 800; color: var(--navy); margin-bottom: 0.5rem; }
+.svc-desc { font-size: 0.87rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.2rem; }
+.svc-price { display: inline-block; background: linear-gradient(135deg,var(--sky),var(--sky-deep)); color: #fff; border-radius: 50px; padding: 0.3rem 1rem; font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 0.88rem; }
 
 /* REVIEWS */
-#reviews { background:linear-gradient(145deg,var(--navy) 0%,var(--sky-deep) 100%); }
-#reviews .sec-label { color:var(--gold); }
-#reviews .sec-title { color:#fff; }
-#reviews .sec-sub { color:rgba(255,255,255,0.6); }
-.reviews-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4rem; max-width:1160px; margin:0 auto; }
-.rev-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:var(--radius); padding:1.8rem; backdrop-filter:blur(8px); transition:background 0.25s,transform 0.25s; }
-.rev-card:hover { background:rgba(255,255,255,0.14); transform:translateY(-4px); }
-.rev-stars { color:var(--gold); font-size:0.95rem; letter-spacing:2px; margin-bottom:0.9rem; direction:ltr; text-align:right; }
-.rev-text { color:rgba(255,255,255,0.82); font-size:0.88rem; line-height:1.85; margin-bottom:1.3rem; font-style:italic; }
-.rev-author { display:flex; align-items:center; gap:0.8rem; flex-direction:row-reverse; }
-.rev-ava { width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:'Heebo',sans-serif; font-weight:800; font-size:0.95rem; color:var(--navy); flex-shrink:0; }
-.rev-name { font-family:'Heebo',sans-serif; font-weight:700; color:#fff; font-size:0.92rem; }
-.rev-when { font-size:0.73rem; color:rgba(255,255,255,0.42); }
+#reviews { background: linear-gradient(145deg,var(--navy) 0%,var(--sky-deep) 100%); }
+#reviews .sec-label { color: var(--gold); }
+#reviews .sec-title { color: #fff; }
+#reviews .sec-sub { color: rgba(255,255,255,0.6); }
+.reviews-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.4rem; max-width: 1160px; margin: 0 auto; }
+.rev-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.14); border-radius: var(--radius); padding: 1.8rem; backdrop-filter: blur(8px); transition: background 0.25s,transform 0.25s; }
+.rev-card:hover { background: rgba(255,255,255,0.14); transform: translateY(-4px); }
+.rev-stars { color: var(--gold); font-size: 0.95rem; letter-spacing: 2px; margin-bottom: 0.9rem; direction: ltr; text-align: right; }
+.rev-text { color: rgba(255,255,255,0.82); font-size: 0.88rem; line-height: 1.85; margin-bottom: 1.3rem; font-style: italic; }
+.rev-author { display: flex; align-items: center; gap: 0.8rem; flex-direction: row-reverse; }
+.rev-ava { width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 0.95rem; color: var(--navy); flex-shrink: 0; }
+.rev-name { font-family: 'Heebo',sans-serif; font-weight: 700; color: #fff; font-size: 0.92rem; }
+.rev-when { font-size: 0.73rem; color: rgba(255,255,255,0.42); }
 
 /* FAQ */
-#faq { background:#fff; }
-.faq-wrap { max-width:740px; margin:0 auto; }
-.faq-item { border-bottom:1px solid rgba(13,43,69,0.1); }
-.faq-q { display:flex; justify-content:space-between; align-items:center; gap:1rem; padding:1.3rem 0; cursor:pointer; font-family:'Heebo',sans-serif; font-weight:700; font-size:0.97rem; color:var(--navy); transition:color 0.2s; flex-direction:row-reverse; }
-.faq-q:hover { color:var(--sky); }
-.faq-icon { width:28px; height:28px; border-radius:50%; background:var(--foam); display:flex; align-items:center; justify-content:center; font-size:1.15rem; color:var(--sky); flex-shrink:0; transition:transform 0.3s,background 0.2s,color 0.2s; }
-.faq-item.open .faq-icon { transform:rotate(45deg); background:var(--sky); color:#fff; }
-.faq-a { max-height:0; overflow:hidden; transition:max-height 0.4s ease,padding 0.3s; font-size:0.9rem; color:var(--muted); line-height:1.85; text-align:right; }
-.faq-item.open .faq-a { max-height:300px; padding-bottom:1.3rem; }
+#faq { background: #fff; }
+.faq-wrap { max-width: 740px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid rgba(13,43,69,0.1); }
+.faq-q { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1.3rem 0; cursor: pointer; font-family: 'Heebo',sans-serif; font-weight: 700; font-size: 0.97rem; color: var(--navy); transition: color 0.2s; flex-direction: row-reverse; }
+.faq-q:hover { color: var(--sky); }
+.faq-icon { width: 28px; height: 28px; border-radius: 50%; background: var(--foam); display: flex; align-items: center; justify-content: center; font-size: 1.15rem; color: var(--sky); flex-shrink: 0; transition: transform 0.3s,background 0.2s,color 0.2s; }
+.faq-item.open .faq-icon { transform: rotate(45deg); background: var(--sky); color: #fff; }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease,padding 0.3s; font-size: 0.9rem; color: var(--muted); line-height: 1.85; text-align: right; }
+.faq-item.open .faq-a { max-height: 300px; padding-bottom: 1.3rem; }
 
 /* CONTACT */
-#contact { background:var(--foam); }
-.contact-grid { display:grid; grid-template-columns:1fr 1fr; gap:4rem; max-width:1100px; margin:0 auto; align-items:start; }
-.contact-items { margin-top:0.5rem; }
-.c-item { display:flex; align-items:flex-start; gap:1rem; margin-bottom:1.5rem; flex-direction:row-reverse; }
-.c-icon { width:46px; height:46px; border-radius:14px; background:linear-gradient(135deg,var(--sky),var(--sky-deep)); display:flex; align-items:center; justify-content:center; font-size:1.2rem; flex-shrink:0; }
-.c-label { font-size:0.72rem; font-weight:700; color:var(--sky); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:0.2rem; }
-.c-val { font-size:0.94rem; color:var(--text); font-weight:500; line-height:1.7; }
-.c-val a { color:var(--sky); text-decoration:none; direction:ltr; display:inline-block; }
-.c-val a:hover { text-decoration:underline; }
-.map-btn { display:flex; align-items:center; justify-content:center; gap:0.7rem; margin-top:1.5rem; background:linear-gradient(135deg,var(--sky-deep),var(--sky)); color:#fff; text-decoration:none; border-radius:14px; padding:1rem 1.5rem; font-family:'Heebo',sans-serif; font-weight:700; font-size:0.95rem; transition:opacity 0.2s; }
-.map-btn:hover { opacity:0.9; }
+#contact { background: var(--foam); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; align-items: start; }
+.contact-items { margin-top: 0.5rem; }
+.c-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem; flex-direction: row-reverse; }
+.c-icon { width: 46px; height: 46px; border-radius: 14px; background: linear-gradient(135deg,var(--sky),var(--sky-deep)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+.c-label { font-size: 0.72rem; font-weight: 700; color: var(--sky); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.2rem; }
+.c-val { font-size: 0.94rem; color: var(--text); font-weight: 500; line-height: 1.7; }
+.c-val a { color: var(--sky); text-decoration: none; direction: ltr; display: inline-block; }
+.c-val a:hover { text-decoration: underline; }
+.map-btn { display: flex; align-items: center; justify-content: center; gap: 0.7rem; margin-top: 1.5rem; background: linear-gradient(135deg,var(--sky-deep),var(--sky)); color: #fff; text-decoration: none; border-radius: 14px; padding: 1rem 1.5rem; font-family: 'Heebo',sans-serif; font-weight: 700; font-size: 0.95rem; transition: opacity 0.2s; }
+.map-btn:hover { opacity: 0.9; }
 
-.contact-form-box { background:#fff; border-radius:var(--radius); padding:2.5rem; box-shadow:var(--shadow); }
-.cf-title { font-family:'Heebo',sans-serif; font-weight:900; color:var(--navy); font-size:1.3rem; margin-bottom:1.5rem; }
-.fg { margin-bottom:1.3rem; }
-.flabel { display:block; font-size:0.78rem; font-weight:700; color:var(--navy); letter-spacing:0.3px; margin-bottom:0.45rem; }
-.finput, .ftextarea { width:100%; border:2px solid rgba(13,43,69,0.1); border-radius:12px; padding:0.8rem 1rem; font-family:'Heebo',sans-serif; font-size:0.93rem; color:var(--text); background:var(--foam); outline:none; transition:border-color 0.2s,box-shadow 0.2s; text-align:right; }
-.finput:focus, .ftextarea:focus { border-color:var(--sky); box-shadow:0 0 0 4px rgba(26,143,209,0.1); background:#fff; }
-.ftextarea { height:120px; resize:vertical; }
-.fsubmit { width:100%; background:linear-gradient(135deg,var(--sky),var(--sky-deep)); color:#fff; border:none; border-radius:50px; padding:1rem; font-family:'Heebo',sans-serif; font-weight:800; font-size:1rem; cursor:pointer; transition:transform 0.2s,box-shadow 0.2s; }
-.fsubmit:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,143,209,0.4); }
-.fsuccess { display:none; background:#e8f8ee; border:1px solid #7dd6a0; border-radius:12px; padding:1rem; text-align:center; color:#1a7a40; font-weight:600; font-size:0.9rem; margin-top:1rem; }
+.contact-form-box { background: #fff; border-radius: var(--radius); padding: 2.5rem; box-shadow: var(--shadow); }
+.cf-title { font-family: 'Heebo',sans-serif; font-weight: 900; color: var(--navy); font-size: 1.3rem; margin-bottom: 1.5rem; }
+.fg { margin-bottom: 1.3rem; }
+.flabel { display: block; font-size: 0.78rem; font-weight: 700; color: var(--navy); letter-spacing: 0.3px; margin-bottom: 0.45rem; }
+.finput, .ftextarea { width: 100%; border: 2px solid rgba(13,43,69,0.1); border-radius: 12px; padding: 0.8rem 1rem; font-family: 'Heebo',sans-serif; font-size: 0.93rem; color: var(--text); background: var(--foam); outline: none; transition: border-color 0.2s,box-shadow 0.2s; text-align: right; }
+.finput:focus, .ftextarea:focus { border-color: var(--sky); box-shadow: 0 0 0 4px rgba(26,143,209,0.1); background: #fff; }
+.ftextarea { height: 120px; resize: vertical; }
+.fsubmit { width: 100%; background: linear-gradient(135deg,var(--sky),var(--sky-deep)); color: #fff; border: none; border-radius: 50px; padding: 1rem; font-family: 'Heebo',sans-serif; font-weight: 800; font-size: 1rem; cursor: pointer; transition: transform 0.2s,box-shadow 0.2s; }
+.fsubmit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,143,209,0.4); }
+.fsuccess { display: none; background: #e8f8ee; border: 1px solid #7dd6a0; border-radius: 12px; padding: 1rem; text-align: center; color: #1a7a40; font-weight: 600; font-size: 0.9rem; margin-top: 1rem; }
 
 /* FOOTER */
-footer { background:var(--navy); padding:3.5rem 5% 2rem; }
-.footer-inner { max-width:1160px; margin:0 auto; }
-.footer-top { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:3rem; margin-bottom:2.5rem; }
-.ft-brand .logo { font-family:'Heebo',sans-serif; font-size:1.6rem; font-weight:900; color:#fff; display:block; margin-bottom:0.8rem; }
-.ft-brand .logo span { color:var(--gold); }
-.ft-brand p { font-size:0.84rem; color:rgba(255,255,255,0.5); line-height:1.85; }
-.socials { display:flex; gap:0.6rem; margin-top:1rem; flex-direction:row-reverse; }
-.soc { width:38px; height:38px; border-radius:10px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); display:flex; align-items:center; justify-content:center; font-size:0.95rem; text-decoration:none; color:rgba(255,255,255,0.65); transition:background 0.2s,color 0.2s,border-color 0.2s; }
-.soc:hover { background:var(--gold); color:var(--navy); border-color:var(--gold); }
-.ft-col h4 { font-family:'Heebo',sans-serif; font-weight:800; color:#fff; font-size:0.92rem; margin-bottom:1rem; }
-.ft-col ul { list-style:none; }
-.ft-col li { margin-bottom:0.6rem; }
-.ft-col a { color:rgba(255,255,255,0.5); text-decoration:none; font-size:0.86rem; transition:color 0.2s; }
-.ft-col a:hover { color:var(--gold); }
-.footer-bottom { border-top:1px solid rgba(255,255,255,0.07); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; font-size:0.8rem; color:rgba(255,255,255,0.35); }
-.footer-bottom strong { color:var(--gold); }
+footer { background: var(--navy); padding: 3.5rem 5% 2rem; }
+.footer-inner { max-width: 1160px; margin: 0 auto; }
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 3rem; margin-bottom: 2.5rem; }
+.ft-brand .logo { font-family: 'Heebo',sans-serif; font-size: 1.6rem; font-weight: 900; color: #fff; display: block; margin-bottom: 0.8rem; }
+.ft-brand .logo span { color: var(--gold); }
+.ft-brand p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.85; }
+.socials { display: flex; gap: 0.6rem; margin-top: 1rem; flex-direction: row-reverse; }
+.soc { width: 38px; height: 38px; border-radius: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.95rem; text-decoration: none; color: rgba(255,255,255,0.65); transition: background 0.2s,color 0.2s,border-color 0.2s; }
+.soc:hover { background: var(--gold); color: var(--navy); border-color: var(--gold); }
+.ft-col h4 { font-family: 'Heebo',sans-serif; font-weight: 800; color: #fff; font-size: 0.92rem; margin-bottom: 1rem; }
+.ft-col ul { list-style: none; }
+.ft-col li { margin-bottom: 0.6rem; }
+.ft-col a { color: rgba(255,255,255,0.5); text-decoration: none; font-size: 0.86rem; transition: color 0.2s; }
+.ft-col a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem; font-size: 0.8rem; color: rgba(255,255,255,0.35); }
+.footer-bottom strong { color: var(--gold); }
 
 /* RESPONSIVE */
 @media (max-width:1024px) {
-  .services-grid { grid-template-columns:repeat(2,1fr); }
-  .reviews-grid { grid-template-columns:repeat(2,1fr); }
-  .footer-top { grid-template-columns:1fr 1fr; }
+  .services-grid { grid-template-columns: repeat(2,1fr); }
+  .reviews-grid { grid-template-columns: repeat(2,1fr); }
+  .footer-top { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width:768px) {
-  .nav-links, .nav-call { display:none; }
-  .hamburger { display:flex; }
-  section { padding:65px 5%; }
-  .about-grid { grid-template-columns:1fr; }
-  .badge-years { left:1rem; }
-  .perks { grid-template-columns:1fr; }
-  .services-grid { grid-template-columns:1fr; }
-  .reviews-grid { grid-template-columns:1fr; }
-  .contact-grid { grid-template-columns:1fr; gap:2.5rem; }
-  .footer-top { grid-template-columns:1fr; gap:2rem; }
-  .footer-bottom { flex-direction:column; text-align:center; }
+  .nav-links, .nav-call { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 65px 5%; }
+  .about-grid { grid-template-columns: 1fr; }
+  .badge-years { left: 1rem; }
+  .perks { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: 1fr; }
+  .reviews-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+  .footer-bottom { flex-direction: column; text-align: center; }
+  nav { top: 40px; } /* Ensures sticky consistency on mobile */
 }
 @media (max-width:480px) {
-  .hero-btns { flex-direction:column; align-items:center; }
-  .hero-phones { flex-direction:column; align-items:center; gap:0.8rem; }
+  .hero-btns { flex-direction: column; align-items: center; }
+  .hero-phones { flex-direction: column; align-items: center; gap: 0.8rem; }
 }
 </style>
 </head>
 <body>
 
 <!-- TOP BAR -->
-<div class="top-bar">🚚 <strong>משלוח חינם</strong> לכל רחבי העיר! | <strong>배달 무료</strong> — שירות עד הבית</div>
+<div class="top-bar">🚚 <strong>משלוח חינם</strong> לכל רחבי העיר! | <strong>משלוח עד הבית</strong></div>
 
 <!-- NAV -->
 <nav>
@@ -337,7 +360,7 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
     <div class="svc-card">
       <span class="svc-icon">👕</span>
       <div class="svc-name">כביסה</div>
-      <div class="svc-desc">כביסה מקצועית לכל סוגי הבגדים. כביסה במכונה ובעבודת יד, עם בחירת תוכנית המתאימה לסוג הבד.</div>
+      <div class="svc-desc">כביסה מקצועית לכל סוגי הבגדים. כביסה במכונה ובעבודת יד, עם בחירת תוכנית המתאימה לסוג הבд.</div>
       <span class="svc-price">מ-₪15</span>
     </div>
     <div class="svc-card">
@@ -355,13 +378,13 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
     <div class="svc-card">
       <span class="svc-icon">🛋️</span>
       <div class="svc-name">ניקוי שטיחים</div>
-      <div class="svc-desc">ניקוי עמוק של שטיחים בכל הגדלים. מסירים כתמים, ריחות ואלרגנים.</div>
+      <div class="svc-desc">ניקוי עמוק של שטיחים בכל הגдלים. מסירים כתמים, ריחות ואלרגנים.</div>
       <span class="svc-price">מ-₪80</span>
     </div>
     <div class="svc-card">
       <span class="svc-icon">🪟</span>
       <div class="svc-name">ניקוי וילונות</div>
-      <div class="svc-desc">כביסה וניקוי יבש של וילונות וסטים בכל הגדלים. מורידים, מנקים ומחזירים.</div>
+      <div class="svc-desc">כביסה וניקוי יבש של וילונות וסטים בכל הגдלים. מורידים, מנקים ומחזירים.</div>
       <span class="svc-price">מ-₪60</span>
     </div>
     <div class="svc-card">
@@ -394,7 +417,7 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
     </div>
     <div class="rev-card">
       <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«השירות מדהים, המחירים הוגנים והצוות מקצועי ואדיב. הבגדים חוזרים נקיים, מגוהצים ומסודרים. מכבסה מומלצת בחום!»</div>
+      <div class="rev-text">«השירות מדהים, המחירים הוגנים והצוות מקצועי ואדיב. הבגדים חוזרים נקיים, מגוהצים ומסודרים. מכбסה מומלצת בחום!»</div>
       <div class="rev-author">
         <div class="rev-ava" style="background:#4BB4E8;">רל</div>
         <div>
@@ -407,43 +430,10 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
       <div class="rev-stars">★★★★★</div>
       <div class="rev-text">«השטיח שלי נראה אבוד לגמרי, אבל הם החזירו אותו נקי כמו חדש. המשלוח החינמי זה בונוס ענק. ממשיך להגיע אליהם!»</div>
       <div class="rev-author">
-        <div class="rev-ava" style="background:#a8d4ee;">דמ</div>
+        <div class="rev-ava" style="background:#a8d4ee;">דม</div>
         <div>
           <div class="rev-name">דוד מזרחי</div>
           <div class="rev-when">שנה לפני · Google</div>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«אני לקוחה קבועה כבר כמה שנים. תמיד בזמן, תמיד איכות מעולה. ממליצה לכל השכנים שלי ברחוב!»</div>
-      <div class="rev-author">
-        <div class="rev-ava" style="background:#F5C842;">מא</div>
-        <div>
-          <div class="rev-name">מירי אברהם</div>
-          <div class="rev-when">6 חודשים לפני · Google</div>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«הוילונות שמסרתי נראו חסרי תקווה. קיבלתי אותם בחזרה מושלמים! המחירים הוגנים והצוות נחמד ומקצועי מאוד.»</div>
-      <div class="rev-author">
-        <div class="rev-ava" style="background:#4BB4E8;">נש</div>
-        <div>
-          <div class="rev-name">נועה שפירא</div>
-          <div class="rev-when">3 חודשים לפני · Google</div>
-        </div>
-      </div>
-    </div>
-    <div class="rev-card">
-      <div class="rev-stars">★★★★★</div>
-      <div class="rev-text">«שירות אדיב ומהיר. הביאו ולקחו בזמן שנוח לי. האיכות ברמה גבוהה מאוד. בהחלט אמשיך להשתמש בשירות!»</div>
-      <div class="rev-author">
-        <div class="rev-ava" style="background:#c8e6f5;">אג</div>
-        <div>
-          <div class="rev-name">אלון גרין</div>
-          <div class="rev-when">חודש לפני · Google</div>
         </div>
       </div>
     </div>
@@ -457,7 +447,6 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
     <h2 class="sec-title">שאלות ותשובות</h2>
   </div>
   <div class="faq-wrap">
-
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         <span>איך עובד המשלוח החינמי?</span>
@@ -465,7 +454,6 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
       </div>
       <div class="faq-a">אנחנו אוספים את הבגדים ישירות מהבית שלכם ומחזירים אותם כשהם מוכנים — לגמרי בחינם. פשוט התקשרו אלינו ונקבע זמן נוח. השירות זמין בכל קריית ביאליק.</div>
     </div>
-
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">
         <span>כמה זמן לוקחת הכביסה?</span>
@@ -473,39 +461,6 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
       </div>
       <div class="faq-a">זמן הטיפול הרגיל הוא 2–3 ימי עסקים. לזמנות דחופות יש אופציה לטיפול אקספרס תוך 24 שעות — יש לציין בעת ההזמנה.</div>
     </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span>האם אתם מטפלים בבדים עדינים?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">כן, אנחנו מתמחים בניקוי עדין של משי, צמר, קשמיר, פשתן ובדים עדינים אחרים. כל פריט מטופל באופן אישי לפי הוראות היצרן.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span>מה קורה אם הבגד לא נוקה כמו שצריך?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">אם אינכם מרוצים מהתוצאה — נכבס מחדש בחינם, ללא שאלות. אנחנו אחראים על כל פריט שמסרתם לטיפולנו.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span>האם אתם מקבלים שטיחים גדולים?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">כן, אנחנו מקבלים שטיחים בכל הגדלים. אנחנו מגיעים לאסוף אותם ומחזירים אחרי הניקוי. צרו איתנו קשר לקביעת מועד איסוף.</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span>איך יוצרים קשר?</span>
-        <div class="faq-icon">+</div>
-      </div>
-      <div class="faq-a">ניתן להתקשר: 054-8-373747 או 04-8888855. אנחנו נמצאים ברחוב קרן היסוד 63, קריית ביאליק. ניתן גם להשאיר פנייה בטופס ליצירת קשר למטה.</div>
-    </div>
-
   </div>
 </section>
 
@@ -536,17 +491,8 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
             </div>
           </div>
         </div>
-        <div class="c-item">
-          <div class="c-icon">🕐</div>
-          <div>
-            <div class="c-label">שעות פעילות</div>
-            <div class="c-val">ב׳–ה׳: 8:00–19:00<br>ערב שבת: 8:00–14:00<br>א׳: 9:00–18:00</div>
-          </div>
-        </div>
       </div>
-      <a href="https://maps.google.com/?q=קרן+היסוד+63+קריית+ביאליק" target="_blank" class="map-btn">
-        📍 פתח ב-Google Maps
-      </a>
+      <a href="https://maps.google.com/?q=קרן+היסוד+63+קריית+ביאליק" target="_blank" class="map-btn">📍 פתח ב-Google Maps</a>
     </div>
 
     <div class="contact-form-box">
@@ -559,14 +505,6 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
         <label class="flabel">טלפון</label>
         <input type="tel" class="finput" placeholder="050-0000000" id="f-phone" dir="ltr" style="text-align:left;">
       </div>
-      <div class="fg">
-        <label class="flabel">סוג שירות</label>
-        <input type="text" class="finput" placeholder="כביסה, ניקוי יבש, שטיח..." id="f-service">
-      </div>
-      <div class="fg">
-        <label class="flabel">הודעה</label>
-        <textarea class="ftextarea" placeholder="ספרו לנו על ההזמנה שלכם..." id="f-msg"></textarea>
-      </div>
       <button class="fsubmit" onclick="sendForm()">שלח פנייה 🚀</button>
       <div class="fsuccess" id="fsuccess">✅ תודה! ניצור איתכם קשר בהקדם.</div>
     </div>
@@ -576,39 +514,8 @@ footer { background:var(--navy); padding:3.5rem 5% 2rem; }
 <!-- ═══ FOOTER ═══ -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-top">
-      <div class="ft-brand">
-        <span class="logo">Top<span>Clean</span></span>
-        <p>מכבסה מקצועית בקריית ביאליק. כביסה, ניקוי יבש, גיהוץ וניקוי שטיחים עם משלוח חינם בכל העיר.</p>
-        <div class="socials">
-          <a href="#" class="soc" title="WhatsApp">💬</a>
-          <a href="#" class="soc" title="Facebook">f</a>
-          <a href="#" class="soc" title="Instagram">📸</a>
-        </div>
-      </div>
-      <div class="ft-col">
-        <h4>שירותים</h4>
-        <ul>
-          <li><a href="#services">כביסה</a></li>
-          <li><a href="#services">גיהוץ</a></li>
-          <li><a href="#services">ניקוי יבש</a></li>
-          <li><a href="#services">ניקוי שטיחים</a></li>
-          <li><a href="#services">ניקוי וילונות</a></li>
-        </ul>
-      </div>
-      <div class="ft-col">
-        <h4>יצירת קשר</h4>
-        <ul>
-          <li><a href="tel:054-8-373747">054-8-373747</a></li>
-          <li><a href="tel:04-8888855">04-8888855</a></li>
-          <li><a href="#contact">קרן היסוד 63</a></li>
-          <li><a href="#contact">קריית ביאליק</a></li>
-          <li><a href="#faq">שאלות נפוצות</a></li>
-        </ul>
-      </div>
-    </div>
     <div class="footer-bottom">
-      <div>© 2024 <strong>Top Clean</strong> — כל הזכויות שמורות</div>
+      <div>© 2026 <strong>Top Clean</strong> — כל הזכויות שמורות</div>
       <div>קריית ביאליק 🇮🇱</div>
     </div>
   </div>
@@ -649,7 +556,8 @@ function sendForm(){
   var name = document.getElementById('f-name').value.trim();
   var phone = document.getElementById('f-phone').value.trim();
   if (!name || !phone){ alert('אנא מלאו שם וטלפון'); return; }
-  ['f-name','f-phone','f-service','f-msg'].forEach(function(id){ document.getElementById(id).value=''; });
+  document.getElementById('f-name').value='';
+  document.getElementById('f-phone').value='';
   var ok = document.getElementById('fsuccess');
   ok.style.display = 'block';
   setTimeout(function(){ ok.style.display='none'; }, 5000);
